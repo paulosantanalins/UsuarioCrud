@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ILogGenericoRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Logger\Logger.csproj" />
+    <ProjectReference Include="..\Cliente.Domain.Core\Cliente.Domain.Core.csproj" />
+    <ProjectReference Include="..\Cliente.Domain\Cliente.Domain.csproj" />
+    <ProjectReference Include="..\Cliente.Infra.Data.SqlServer\Cliente.Infra.Data.SqlServer.csproj" />
+  </ItemGroup>
+
+</Project>

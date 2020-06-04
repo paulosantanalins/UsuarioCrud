@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="GestaoCelulaRoot\**" />
+    <Compile Remove="GestaoContratoRoot\**" />
+    <Compile Remove="GestaoServicoRoot\**" />
+    <EmbeddedResource Remove="GestaoCelulaRoot\**" />
+    <EmbeddedResource Remove="GestaoContratoRoot\**" />
+    <EmbeddedResource Remove="GestaoServicoRoot\**" />
+    <None Remove="GestaoCelulaRoot\**" />
+    <None Remove="GestaoContratoRoot\**" />
+    <None Remove="GestaoServicoRoot\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="GestaoServicoContratadoRoot\Entity\TipoDespesa.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="4.5.2" />
+    <PackageReference Include="FluentValidation" Version="7.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Logger\Logger.csproj" />
+    <ProjectReference Include="..\..\..\..\Utils\Utils.csproj" />
+    <ProjectReference Include="..\GestaoServico.Domain.Core\GestaoServico.Domain.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="SharedRoot\" />
+  </ItemGroup>
+
+</Project>

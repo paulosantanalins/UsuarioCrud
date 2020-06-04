@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Forecast.Domain\Forecast.Domain.csproj" />
+    <ProjectReference Include="..\Forecast.Infra.Data.SqlServer\Forecast.Infra.Data.SqlServer.csproj" />
+  </ItemGroup>
+
+</Project>

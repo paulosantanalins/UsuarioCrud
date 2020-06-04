@@ -1,0 +1,19 @@
+th,td{
+    text-align: center;
+}
+th{
+    background-color:#23e95e;
+    color: white;
+}
+.tbl1
+{
+    width: 400px;
+}
+.tbl2
+{
+    width: 400pxx;
+}
+
+table {
+    width: 100%;
+}

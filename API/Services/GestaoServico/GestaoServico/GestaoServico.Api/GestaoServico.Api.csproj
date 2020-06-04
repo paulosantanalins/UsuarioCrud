@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+    <UserSecretsId>e89ec279-f84b-4591-b9af-acd6cdd047df</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\**" />
+    <Content Remove="wwwroot\**" />
+    <EmbeddedResource Remove="wwwroot\**" />
+    <None Remove="wwwroot\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="AutoMapper\CustomProfile\ServicoIntegracaoVMParaVinculoClienteServicoCustomProfile.cs" />
+    <Compile Remove="Jobs\IProvider.cs" />
+    <Compile Remove="Jobs\Provider.cs" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="4.0.0" />
+    <PackageReference Include="DeveloperForce.NetCore.Force" Version="1.0.4" />
+    <PackageReference Include="FluentScheduler" Version="5.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Utils\Utils.csproj" />
+    <ProjectReference Include="..\GestaoServico.Domain.Core\GestaoServico.Domain.Core.csproj" />
+    <ProjectReference Include="..\GestaoServico.Domain\GestaoServico.Domain.csproj" />
+    <ProjectReference Include="..\GestaoServico.Infra.CrossCutting.IoC\GestaoServico.Infra.CrossCutting.IoC.csproj" />
+    <ProjectReference Include="..\GestaoServico.Infra.Data.SqlServer\GestaoServico.Infra.Data.SqlServer.csproj" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1staging_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+</Project>

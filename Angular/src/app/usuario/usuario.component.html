@@ -1,0 +1,114 @@
+<div class="container">  
+  
+  <mat-card>  
+    <mat-toolbar color="primary">  
+      <div align="center" style="color:white;text-align: right;">  
+        Usuários - CREATE READ UPDATE DELETE
+      </div>    
+    </mat-toolbar>  
+  <br><br>  
+    <mat-card-content>  
+      <form [formGroup]="usuarioForm"(ngSubmit)="onFormSubmit(usuarioForm.value)">  
+              <table>  
+                <tr>  
+                  <td class="tbl1">  
+                    <mat-form-field class="demo-full-width">  
+                      <input formControlName="Nome" matTooltip="Informe o nome do Usuário" matInput placeholder="Nome do Usuário"
+                      [(ngModel)]="usuario.nome" required>  
+                    </mat-form-field>  
+                    <mat-error>  
+                      <span *ngIf="!usuarioForm.get('Nome').value && usuarioForm.get('Nome').touched"></span>  
+                    </mat-error>  
+                  </td>  
+                 
+                  <td class="tbl1">  
+                    <mat-form-field class="demo-full-width">  
+                      <input formControlName="Email" matTooltip="Informe o email" matInput placeholder="Email"
+                      [(ngModel)]="usuario.email" pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" required>  
+                    </mat-form-field>  
+                    <mat-error>  
+                      <span *ngIf="!usuarioForm.get('Email').valid && !usuarioForm.get('Email').value && usuarioForm.get('Email').touched"></span>  
+                    </mat-error>  
+                  </td>
+                  
+                  <td class="tbl1">  
+                    <mat-form-field class="demo-full-width">  
+                      <input formControlName="Sobrenome" matTooltip="Informe o Sobrenome" matInput placeholder="Sobrenome"
+                      [(ngModel)]="usuario.sobrenome" required>  
+                    </mat-form-field>  
+                    <mat-error>  
+                      <span *ngIf="!usuarioForm.get('Sobrenome').value && usuarioForm.get('Sobrenome').touched"></span>  
+                    </mat-error>  
+                  </td>
+
+                  <td class="tbl1">
+                    <mat-form-field>
+                      <mat-label>Escolaridade</mat-label>
+                      <mat-select [value]="usuario.escolaridade" (selectionChange)="changeEscolaridade($event.value)">
+                        <mat-option [value]="1">Infantil</mat-option>
+                        <mat-option [value]="2">Fundamental</mat-option>
+                        <mat-option [value]="3">Médio</mat-option>
+                        <mat-option [value]="4">Superior</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+
+                  <td class="tbl1">  
+                    <mat-form-field>
+                      <mat-label>Data de Nascimento</mat-label>
+                      <input [max]="maxDate" matInput [matDatepicker]="picker" [value]="usuario.dataNasc" (dateChange)="EndDateChange($event)">
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                  </td>
+
+                  
+                  
+                </tr>  
+
+                <tr>  
+                  <td></td>  
+                  <td  class="content-center">  
+                    <button type="submit" mat-raised-button color="primary" matTooltip="Clique no botão Enviar" [disabled]="validarDados()" (click)="persistirUsuario()">Enviar</button>      
+                    <button type="reset" mat-raised-button color="primary"matTooltip="Clique no botão Resetar" (click)="resetForm()">Resetar</button>  
+                  </td>  
+                  <td>  
+                    <p *ngIf="dataSaved" style="color:rgb(55, 0, 128);font-size:20px;font-weight:bold" Class="success" align="left">  
+                      {{message}}  
+                    </p>  
+                  </td>  
+                </tr>  
+              </table>  
+  <br><br>  
+        <table class="table" >  
+            <tr ngclass="btn-primary">  
+              <th class="tbl2">Nome</th>  
+              <th class="tbl2">Sobrenome</th>  
+              <th class="tbl2">Email</th>  
+              <th class="tbl2">Data Nascimento</th>
+              <th class="tbl2">Escolaridade</th>  
+              <th class="tbl2">Edita</th>  
+              <th class="tbl2">Deleta</th>  
+            </tr>  
+            <tr *ngFor="let usuario of allUsuarios | async">  
+              <td class="tbl2">{{usuario.nome}}</td> 
+              <td class="tbl2">{{usuario.sobrenome}}</td> 
+              <td class="tbl2">{{usuario.email}}</td>
+              <td class="tbl2">{{usuario.dataNasc | date:"dd/MM/yyyy"}}</td>
+              <td class="tbl2" *ngIf="usuario.escolaridade == 1">Infantil</td>
+              <td class="tbl2" *ngIf="usuario.escolaridade == 2">Fundamental</td>
+              <td class="tbl2" *ngIf="usuario.escolaridade == 3">Médio</td>
+              <td class="tbl2" *ngIf="usuario.escolaridade == 4">Superior</td>  
+              <td class="tbl2">  
+                <button type="button" class="btn btn-info" matTooltip="Clique no botão para Editar"(click)="carregarUsuarioEditar(usuario.id)">Editar</button>  
+              </td>  
+              <td class="tbl2">  
+                <button type="button" class="btn btn-danger"matTooltip="Clique no botão para Deletar"(click)="deleteUsuario(usuario.id)">Deletar</button>  
+              </td>  
+            </tr>  
+    
+          </table>  
+      </form>  
+    </mat-card-content>  
+  </mat-card>  
+  </div> 

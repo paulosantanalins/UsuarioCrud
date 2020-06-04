@@ -1,0 +1,123 @@
+2020-01-23 12:29:23.343 -03:00 [Fatal] Default:
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'TBLBROADCAST'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider._TrackEntities[TOut,TIn](IEnumerable`1 results, QueryContext queryContext, IList`1 entityTrackingInfos, IList`1 entityAccessors)+MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Collections.Generic.List`1.AddEnumerable(IEnumerable`1 enumerable)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at ControleAcesso.Infra.Data.SqlServer.Repository.ControleAcesso.BroadcastRepository.ObterTodosBroadcastsNaoExcluidos(String usuario) in C:\Users\ybligorio\Documents\Projetos\STF-JF-EACESSO\EAcessoApi\Services\ControleAcesso\ControleAcesso.Infra.Data.SqlServer\Repository\ControleAcesso\BroadcastRepository.cs:line 21
+   at ControleAcesso.Domain.BroadcastRoot.Service.BroadcastService.ObterTodosBroadcastsNaoExcluidos(String usuario) in C:\Users\ybligorio\Documents\Projetos\STF-JF-EACESSO\EAcessoApi\Services\ControleAcesso\ControleAcesso.Domain\BroadcastRoot\Service\BroadcastService.cs:line 33
+   at ControleAcesso.Api.Controllers.BroadcastController.ObterTodosBroadcastsNaoExcluidos(String usuario) in C:\Users\ybligorio\Documents\Projetos\STF-JF-EACESSO\EAcessoApi\Services\ControleAcesso\ControleAcesso.Api\Controllers\BroadcastController.cs:line 20
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Utils.Middleware.UserNameCustomMiddleware.InvokeAsync(HttpContext context) in C:\Users\ybligorio\Documents\Projetos\STF-JF-EACESSO\EAcessoApi\Utils\Middleware\UserNameCustomMiddleware.cs:line 38
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+ClientConnectionId:afc96e0c-3d4b-4b69-abf3-97f88aa99634
+Error Number:208,State:1,Class:16
+2020-01-23 12:30:05.055 -03:00 [Fatal] Cannot insert the value NULL into column 'IDBROADCASTITEM', table 'dbEAcesso.dbo.TBLBROADCASTITEM'; column does not allow nulls. INSERT fails.
+The statement has been terminated.:
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Cannot insert the value NULL into column 'IDBROADCASTITEM', table 'dbEAcesso.dbo.TBLBROADCASTITEM'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(DbContext _, ValueTuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at ControleAcesso.Infra.Data.SqlServer.Context.ControleAcessoContext.SaveChanges(Boolean acceptAllChangesOnSuccess) in C:\Users\ybligorio\Documents\Projetos\STF-JF-EACESSO\EAcessoApi\Services\ControleAcesso\ControleAcesso.Infra.Data.SqlServer\Context\ControleAcessoContext.cs:line 71
+   at ControleAcesso.Infra.Data.SqlServer.UoW.UnitOfWork.Commit() in C:\Users\ybligorio\Documents\Projetos\STF-JF-EACESSO\EAcessoApi\Services\ControleAcesso\ControleAcesso.Infra.Data.SqlServer\UoW\UnitOfWork.cs:line 20
+   at ControleAcesso.Domain.BroadcastRoot.Service.BroadcastService.CriarBroadcastsParaAberturaPeriodoRepasse(PeriodoRepasseDto periodoRepasseDto) in C:\Users\ybligorio\Documents\Projetos\STF-JF-EACESSO\EAcessoApi\Services\ControleAcesso\ControleAcesso.Domain\BroadcastRoot\Service\BroadcastService.cs:line 67
+   at ControleAcesso.Api.Controllers.BroadcastController.CriarBroadcastParaAberturaDePeriodoRepasse(PeriodoRepasseDto periodoRepasseDto) in C:\Users\ybligorio\Documents\Projetos\STF-JF-EACESSO\EAcessoApi\Services\ControleAcesso\ControleAcesso.Api\Controllers\BroadcastController.cs:line 43
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Utils.Middleware.UserNameCustomMiddleware.InvokeAsync(HttpContext context) in C:\Users\ybligorio\Documents\Projetos\STF-JF-EACESSO\EAcessoApi\Utils\Middleware\UserNameCustomMiddleware.cs:line 38
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2020-01-23 15:43:33.092 -03:00 [Fatal] Default:
+System.InvalidOperationException: The instance of entity type 'BroadcastItem' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.ThrowIdentityConflict(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry, Boolean updateDuplicate)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTracking(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState oldState, EntityState newState, Boolean acceptChanges)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.PaintAction(EntityEntryGraphNode node, Boolean force)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityEntryGraphIterator.TraverseGraph[TState](EntityEntryGraphNode node, TState state, Func`3 handleNode)
+   at Microsoft.EntityFrameworkCore.DbContext.SetEntityState[TEntity](TEntity entity, EntityState entityState)
+   at ControleAcesso.Infra.Data.SqlServer.Repository.Base.BaseRepository`1.Adicionar(TEntity entity) in C:\Users\ybligorio\Documents\Projetos\STF-JF-EACESSO\EAcessoApi\Services\ControleAcesso\ControleAcesso.Infra.Data.SqlServer\Repository\Base\BaseRepository.cs:line 30
+   at ControleAcesso.Domain.BroadcastRoot.Service.BroadcastService.CriarBroadcastsParaAprovacaoHoras(List`1 aprovacoes) in C:\Users\ybligorio\Documents\Projetos\STF-JF-EACESSO\EAcessoApi\Services\ControleAcesso\ControleAcesso.Domain\BroadcastRoot\Service\BroadcastService.cs:line 85
+   at ControleAcesso.Api.Controllers.BroadcastController.CriarBroadcastParaAprovacaoHoras(List`1 aprovacaoDto) in C:\Users\ybligorio\Documents\Projetos\STF-JF-EACESSO\EAcessoApi\Services\ControleAcesso\ControleAcesso.Api\Controllers\BroadcastController.cs:line 51
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Utils.Middleware.UserNameCustomMiddleware.InvokeAsync(HttpContext context) in C:\Users\ybligorio\Documents\Projetos\STF-JF-EACESSO\EAcessoApi\Utils\Middleware\UserNameCustomMiddleware.cs:line 38
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2020-01-23 15:49:02.518 -03:00 [Fatal] Default:
+System.ArgumentNullException: IDX10000: The parameter 'token' cannot be a 'null' or an empty object.
+Parameter name: token
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ReadJwtToken(String token) in C:\agent1\_work\109\s\src\System.IdentityModel.Tokens.Jwt\JwtSecurityTokenHandler.cs:line 631
+   at Utils.Middleware.UserNameCustomMiddleware.SetarUsuarioToken() in C:\Users\ybligorio\Documents\Projetos\STF-JF-EACESSO\EAcessoApi\Utils\Middleware\UserNameCustomMiddleware.cs:line 47
+   at Utils.Middleware.UserNameCustomMiddleware.InvokeAsync(HttpContext context) in C:\Users\ybligorio\Documents\Projetos\STF-JF-EACESSO\EAcessoApi\Utils\Middleware\UserNameCustomMiddleware.cs:line 28
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2020-01-23 15:49:02.514 -03:00 [Fatal] Default:
+System.ArgumentNullException: IDX10000: The parameter 'token' cannot be a 'null' or an empty object.
+Parameter name: token
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ReadJwtToken(String token) in C:\agent1\_work\109\s\src\System.IdentityModel.Tokens.Jwt\JwtSecurityTokenHandler.cs:line 631
+   at Utils.Middleware.UserNameCustomMiddleware.SetarUsuarioToken() in C:\Users\ybligorio\Documents\Projetos\STF-JF-EACESSO\EAcessoApi\Utils\Middleware\UserNameCustomMiddleware.cs:line 47
+   at Utils.Middleware.UserNameCustomMiddleware.InvokeAsync(HttpContext context) in C:\Users\ybligorio\Documents\Projetos\STF-JF-EACESSO\EAcessoApi\Utils\Middleware\UserNameCustomMiddleware.cs:line 28
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)

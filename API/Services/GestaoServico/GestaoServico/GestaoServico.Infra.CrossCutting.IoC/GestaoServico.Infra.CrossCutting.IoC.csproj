@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Logger\Logger.csproj" />
+    <ProjectReference Include="..\..\..\..\Utils\Utils.csproj" />
+    <ProjectReference Include="..\GestaoServico.Domain.Core\GestaoServico.Domain.Core.csproj" />
+    <ProjectReference Include="..\GestaoServico.Domain\GestaoServico.Domain.csproj" />
+    <ProjectReference Include="..\GestaoServico.Infra.Data.SqlServer\GestaoServico.Infra.Data.SqlServer.csproj" />
+  </ItemGroup>
+
+</Project>

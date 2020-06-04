@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Utils\Utils.csproj" />
+    <ProjectReference Include="..\..\Profissionais\Profissionais.Domain\Profissionais.Domain.csproj" />
+    <ProjectReference Include="..\RepasseEAcesso.Domain\RepasseEAcesso.Domain.csproj" />
+    <ProjectReference Include="..\RepasseEAcesso.Infra.Data.SqlServer\RepasseEAcesso.Infra.Data.SqlServer.csproj" />
+  </ItemGroup>
+
+</Project>

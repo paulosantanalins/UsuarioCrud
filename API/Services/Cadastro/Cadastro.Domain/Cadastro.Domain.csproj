@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="InativacaoRoot\**" />
+    <Compile Remove="PluginRoot\Entity\**" />
+    <Compile Remove="PluginRoot\Repository\**" />
+    <EmbeddedResource Remove="InativacaoRoot\**" />
+    <EmbeddedResource Remove="PluginRoot\Entity\**" />
+    <EmbeddedResource Remove="PluginRoot\Repository\**" />
+    <None Remove="InativacaoRoot\**" />
+    <None Remove="PluginRoot\Entity\**" />
+    <None Remove="PluginRoot\Repository\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+    <PackageReference Include="FluentValidation" Version="7.6.0" />
+    <PackageReference Include="Justin.AspNetCore.LdapAuthentication" Version="2.0.0" />
+    <PackageReference Include="MimeMapping" Version="1.0.1.17" />
+    <PackageReference Include="Minio.NetCore" Version="1.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Logger\Logger.csproj" />
+    <ProjectReference Include="..\..\..\Utils\Utils.csproj" />
+    <ProjectReference Include="..\Cadastro.Domain.Core\Cadastro.Domain.Core.csproj" />
+  </ItemGroup>
+
+</Project>

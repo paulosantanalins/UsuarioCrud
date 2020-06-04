@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Logger\Logger.csproj" />
+    <ProjectReference Include="..\EnvioEmail.Domain.Core\EnvioEmail.Domain.Core.csproj" />
+    <ProjectReference Include="..\EnvioEmail.Domain\EnvioEmail.Domain.csproj" />
+    <ProjectReference Include="..\EnvioEmail.Infra.Data.SqlServer\EnvioEmail.Infra.Data.SqlServer.csproj" />
+  </ItemGroup>
+
+</Project>
